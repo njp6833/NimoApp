@@ -25,16 +25,16 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         counter = 0;
-        add = (Button) findViewById(R.id.bAdd);
-        add2 = (Button) findViewById(R.id.bAdd2);
-        add3 = (Button) findViewById(R.id.bAdd3);
-        add4 = (Button) findViewById(R.id.bAdd4);
-        add6 = (Button) findViewById(R.id.bAdd6);
-        sub = (Button) findViewById(R.id.bSub);
-        reset = (Button) findViewById(R.id.bReset);
-        badd = (Button) findViewById(R.id.ballAdd);
-        bsub = (Button) findViewById(R.id.ballSub);
-        brest = (Button) findViewById(R.id.ballReset);
+        add    = (Button) findViewById(R.id.bAdd);
+        add2   = (Button) findViewById(R.id.bAdd2);
+        add3   = (Button) findViewById(R.id.bAdd3);
+        add4   = (Button) findViewById(R.id.bAdd4);
+        add6   = (Button) findViewById(R.id.bAdd6);
+        sub    = (Button) findViewById(R.id.bSub);
+        reset  = (Button) findViewById(R.id.bReset);
+        badd   = (Button) findViewById(R.id.ballAdd);
+        bsub   = (Button) findViewById(R.id.ballSub);
+        brest  = (Button) findViewById(R.id.ballReset);
 
 
         display = (TextView) findViewById(R.id.tvDisplay);
@@ -133,7 +133,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                ballCounter++;
+                ++ballCounter;
                 display2.setText("Your total is " + ballCounter);
             }
 
@@ -144,14 +144,13 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                ballCounter--;
-                if (counter <= 0)
+                if (ballCounter <= 0)
                 {
                     ballCounter = 0;
-                    display2.setText("Your total is " + 0);
+                    display2.setText("Your total is " + ballCounter);
                 }
                 else
-                {
+                {   ballCounter--;
                     display2.setText("Your total is "+ballCounter);
                 }
             }
